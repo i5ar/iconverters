@@ -9,7 +9,7 @@ iConverters
 
 ### Windows
 
-Save the `/dist` folder in `/Program Files` Run the `.exe` file.
+Save the `/dist` folder in `/Program Files` and run the `.exe` file.
 
 ### Linux/Mac
 
