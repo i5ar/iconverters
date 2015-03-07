@@ -67,6 +67,13 @@ __pycache__/
 
 
 #############
+## Images files
+#############
+
+# Images folder
+images/
+
+#############
 ## Private files
 #############
 
@@ -75,3 +82,4 @@ pyqt-tutorial-master/
 
 # Incomplete folder
 pressure-qt_widget/
+docs/
