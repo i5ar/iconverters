@@ -2,7 +2,6 @@ from PyQt4 import QtCore, QtGui
 
 from MainWindowUi import Ui_MainWindow
 
-# Convert pyuic4 MainWindow.ui -o MainWindowUi.py
 class MainWindow(QtGui.QMainWindow):
     def __init__(self):
         QtGui.QMainWindow.__init__(self)
@@ -19,7 +18,7 @@ class MainWindow(QtGui.QMainWindow):
 
         # Signal/slot connections
         self.setupConnections()
-    
+
     def convertPascalPressure(self, text):
 
         if len(text) == 0:
@@ -51,7 +50,6 @@ class MainWindow(QtGui.QMainWindow):
             newton_per_mmq = mpascal
             self.ui.lineEdit_2.setText(str(newton_per_mmq))
 
-
     def convertNewtonPressure(self, text):
 
         if len(text) == 0:
@@ -79,6 +77,12 @@ class MainWindow(QtGui.QMainWindow):
             newton_per_mmq = float(text)
             mpascal = newton_per_mmq
             self.ui.lineEdit.setText(str(mpascal))
+
+    # External link test [2]
+    # [2]: http://stackoverflow.com/questions/3684857/pyqt4-open-website-in-standard-browser-on-button-click
+    def isarUrl(self):
+        self.ui.pushButton_5.click
+        #webbrowser.open('http://stackoverflow.com')
 
     # Signal and Slot Support [2]
     # [2]: http://pyqt.sourceforge.net/Docs/PyQt4/new_style_signals_slots.html
