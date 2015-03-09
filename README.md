@@ -1,7 +1,7 @@
 iSarchonverter
 ==============
 
-:triangular_ruler: Just a unit converter for lazy architects.
+:triangular_ruler: A unit converter for lazy architects.
 
 > Work in progress!
 
