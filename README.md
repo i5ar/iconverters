@@ -34,6 +34,6 @@ In order to create an executable run the command below:
 
 GPL
 
-Copyright (c) 2015, iSar
+Copyright (c) 2015, Pierpaolo Rasicci
 
 All rights reserved.
