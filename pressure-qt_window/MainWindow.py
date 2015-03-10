@@ -1,5 +1,6 @@
-from PyQt4 import QtCore, QtGui
+import webbrowser
 
+from PyQt4 import QtCore, QtGui
 from MainWindowUi import Ui_MainWindow
 
 class MainWindow(QtGui.QMainWindow):
@@ -78,14 +79,17 @@ class MainWindow(QtGui.QMainWindow):
             mpascal = newton_per_mmq
             self.ui.lineEdit.setText(str(mpascal))
 
-    # External link test [2]
+    # External link [2]
     # [2]: http://stackoverflow.com/questions/3684857/pyqt4-open-website-in-standard-browser-on-button-click
-    def isarUrl(self):
-        self.ui.pushButton_5.click
-        #webbrowser.open('http://stackoverflow.com')
+    def linkUrl(self):
+        print("The web page!")
+        webbrowser.open('http://stackoverflow.com')
 
-    # Signal and Slot Support [2]
-    # [2]: http://pyqt.sourceforge.net/Docs/PyQt4/new_style_signals_slots.html
+    # Signal and Slot Support [3]
+    # [3]: http://pyqt.sourceforge.net/Docs/PyQt4/new_style_signals_slots.html
     def setupConnections(self):
         self.connect(self.ui.lineEdit, QtCore.SIGNAL('textEdited(QString)'), self.convertPascalPressure)
         self.connect(self.ui.lineEdit_2, QtCore.SIGNAL('textEdited(QString)'), self.convertNewtonPressure)
+        # External link Qt way and Pythonistic way
+        self.connect(self.ui.pushButton_5, QtCore.SIGNAL('clicked()'), self.linkUrl)
+        #self.ui.pushButton_5.clicked.connect(self.linkUrl)
