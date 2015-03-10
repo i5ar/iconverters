@@ -1,4 +1,4 @@
-iSarchonverter
+iSarchonver
 ==============
 
 :triangular_ruler: A unit converter for lazy architects.
