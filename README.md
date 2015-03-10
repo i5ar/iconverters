@@ -26,7 +26,7 @@ In order to create an executable run the command below:
 	>>> cd c:\python34\lib\isarchonver\pressure-qt_window
 	>>> python setup.py py2exe
 
-	### Todo
+### Todo
 
 - A lot.
 
