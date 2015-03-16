@@ -86,3 +86,4 @@ docs/*
 !docs/CONTRIBUTING.md
 !docs/lighting.md
 !docs/stress.rst
+!docs/stress.html
