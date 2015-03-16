@@ -1,13 +1,13 @@
 Le grandezze della luce
 -----------------------
 
-1. Flusso luminoso - Simbolo: φ - Unità di misura: lumen (lm)
+### Flusso luminoso - Simbolo: φ - Unità di misura: lumen (lm)
 Questa grandezza indica la quantità di energia luminosa emessa nell’unità di tempo (1 secondo) da
 una sorgente. Per energia luminosa si intende, per convenzione, quella emessa nell’intervallo da 380
 a 780 nm. Per le lampade la normativa IEC prevede che la misurazione del flusso luminoso emesso
 venga effettuata dopo 100 ore di funzionamento.
 
-2. Intensità luminosa - Simbolo: I - Unità di misura: candela (cd = lm / sr)
+### Intensità luminosa - Simbolo: I - Unità di misura: candela (cd = lm / sr)
 Indica la quantità di flusso luminoso emessa da una sorgente all’interno dell’angolo solido unitario
 (steradiante) in una direzione data.
 Una sorgente luminosa puntiforme emette radiazioni della stessa intensità in tutte le direzioni, quindi
@@ -23,11 +23,11 @@ rotazione.
 La conoscenza della curva fotometrica è molto importante in quanto in base ad essa è possibile verificare
 che l’apparecchio di illuminazione scelto distribuisca la luce nel modo richiesto.
 
-3. Illuminamento - Simbolo: E - Unità di misura: lux (lx = lm / m²)
+### Illuminamento - Simbolo: E - Unità di misura: lux (lx = lm / m²)
 È il rapporto tra il flusso luminoso ricevuto da una superficie e l’area della superficie stessa. In altre
 parole indica la quantità di luce che colpisce un’unità di superficie.
 
-4. Luminanza - Simbolo: L - Unità di misura: candela / m² (cd / m²)
+### Luminanza - Simbolo: L - Unità di misura: candela / m² (cd / m²)
 È il rapporto tra l’intensità luminosa emessa da una superficie in una data direzione e l’area apparente
 di tale superficie. L’area apparente è la proiezione della superficie su un piano normale alla direzione
 considerata. In pratica indica la sensazione di luminosità che si riceve da una sorgente luminosa
@@ -48,7 +48,7 @@ sua distribuzione nello spazio.
 *La luce non è sempre uguale. Può essere più o meno bianca, fredda oppure calda.*
 *I colori delle cose appaiono differenti, variando il tipo di sorgente luminosa utilizzata.*
 
-5. Temperatura di colore
+### Temperatura di colore
 La temperatura di colore, espressa in Kelvin (K)1, è un parametro utilizzato per individuare e catalogare,
 in modo oggettivo, il colore della luce di una sorgente luminosa confrontata con la sorgente
 campione (corpo nero). Dire che una lampada ha una temperatura di colore pari a 3000 K, significa
@@ -60,7 +60,7 @@ Le sorgenti luminose sono suddivise in tre gruppi, a seconda della temperatura d
 La temperatura di colore non deve essere confusa con l’indice di resa dei colori, in quanto la prima
 indica il colore della luce emessa, ma non ci dice nulla riguardo la sua capacità di rendere i colori.
 
-6. L’indice di resa dei colori
+### L’indice di resa dei colori
 Esprime l’effetto prodotto da una sorgente luminosa sull’aspetto cromatico di un oggetto confrontato
 con quello ottenuto per effetto di una sorgente luminosa campione di pari temperatura di colore.
 La sorgente campione, a rigore il corpo nero, è in pratica un metallo, al quale viene somministrata
