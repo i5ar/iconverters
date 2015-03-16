@@ -5,7 +5,7 @@
 * Use `.md` or `.rst` for the documentation.
 * Please make an individual commit for each suggestion in a pull request.
 
-### Consider using [Pandoc] for convertions
+**Consider using [Pandoc] for convertions**:
 
 HyperText Markup Language to reStructuredText:
 
