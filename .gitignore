@@ -83,4 +83,6 @@ pyqt-tutorial-master/
 # Incomplete folder
 pyqt-widget/
 docs/*
+!docs/CONTRIBUTING.md
 !docs/lighting.md
+!docs/material.rst

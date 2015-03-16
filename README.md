@@ -21,7 +21,7 @@ In order to convert the `.iu`  markup to a `.py` script run the command below:
 	
 	>>> pyuic4 MainWindow.ui -o MainWindowUi.py
 	
-In order to create an executable run the command below:
+In order to create an `.exe` file run the command below:
 
 	>>> python setup.py py2exe
 
