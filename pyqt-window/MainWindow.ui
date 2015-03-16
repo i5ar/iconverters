@@ -93,7 +93,7 @@
           <item>
            <widget class="QGroupBox" name="groupBox">
             <property name="title">
-             <string>Pressure</string>
+             <string>Stress</string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_5">
              <item>
@@ -234,7 +234,7 @@
                 </sizepolicy>
                </property>
                <property name="styleSheet">
-                <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(0, 0, 0, 125), stop:1 rgba(255, 255, 255, 255));</string>
+                <string notr="true"/>
                </property>
                <property name="text">
                 <string>PushButton</string>

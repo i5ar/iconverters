@@ -83,7 +83,7 @@ class MainWindow(QtGui.QMainWindow):
     # [2]: http://stackoverflow.com/questions/3684857/pyqt4-open-website-in-standard-browser-on-button-click
     def linkUrl(self):
         print("The web page!")
-        webbrowser.open('http://stackoverflow.com')
+        webbrowser.open('https://github.com/i5ar/isarchon/blob/master/docs/stress.rst')
 
     # Signal and Slot Support [3]
     # [3]: http://pyqt.sourceforge.net/Docs/PyQt4/new_style_signals_slots.html

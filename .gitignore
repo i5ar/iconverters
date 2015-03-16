@@ -85,4 +85,4 @@ pyqt-widget/
 docs/*
 !docs/CONTRIBUTING.md
 !docs/lighting.md
-!docs/material.rst
+!docs/stress.rst

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'MainWindow.ui'
 #
-# Created: Mon Mar 16 21:13:48 2015
+# Created: Mon Mar 16 23:19:29 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -92,6 +92,7 @@ class Ui_MainWindow(object):
         self.comboBox = QtGui.QComboBox(self.groupBox)
         self.comboBox.setMinimumSize(QtCore.QSize(80, 0))
         self.comboBox.setAutoFillBackground(False)
+        self.comboBox.setStyleSheet(_fromUtf8(""))
         self.comboBox.setObjectName(_fromUtf8("comboBox"))
         self.comboBox.addItem(_fromUtf8(""))
         self.comboBox.addItem(_fromUtf8(""))
@@ -138,6 +139,7 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.pushButton_5.sizePolicy().hasHeightForWidth())
         self.pushButton_5.setSizePolicy(sizePolicy)
+        self.pushButton_5.setStyleSheet(_fromUtf8(""))
         self.pushButton_5.setObjectName(_fromUtf8("pushButton_5"))
         self.verticalLayout_5.addWidget(self.pushButton_5)
         self.horizontalLayout_6.addWidget(self.groupBox)
@@ -306,7 +308,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow", None))
         self.label_2.setText(_translate("MainWindow", "Description", None))
-        self.groupBox.setTitle(_translate("MainWindow", "Pressure", None))
+        self.groupBox.setTitle(_translate("MainWindow", "Stress", None))
         self.comboBox.setItemText(0, _translate("MainWindow", "Pa (N/m²)", None))
         self.comboBox.setItemText(1, _translate("MainWindow", "MPa", None))
         self.comboBox_2.setItemText(0, _translate("MainWindow", "kN/m²", None))
