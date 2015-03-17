@@ -19,6 +19,7 @@ class MainWindow(QtGui.QMainWindow):
 
         # Signal/slot connections
         self.setupConnections()
+        self.setupExtra()
 
     def convertPascalPressure(self, text):
 
@@ -85,11 +86,36 @@ class MainWindow(QtGui.QMainWindow):
         print("The web page!")
         webbrowser.open('https://github.com/i5ar/isarchon/blob/master/docs/stress.rst')
 
+    def showDialog(self):
+        QtGui.QMessageBox.about(self, 'About', '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><html><head><meta name="qrichtext" content="1" /><style type="text/css">p, li { white-space: pre-wrap; }</style></head>'
+                                               '<body style=" font-family:\'MS Shell Dlg 2\'; font-size:12pt; font-weight:400; font-style:normal;">'
+                                               '<p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">A simple unit converter for architects.</span></p>'
+                                               '<p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Version 0.0.1</span></p>'
+                                               '<p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Copyright (c) 2015, </span><span style=" font-size:10pt; font-weight:600;">iSar</span></p>'
+                                               '<p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><a href="http://three.isarch.it"><span style=" font-size:10pt; text-decoration: underline; color:#0000ff;">www.isarch.it</span></a></p>'
+                                               '</body></html>')
+
+    def showQuote(self):
+        QtGui.QMessageBox.about(self, 'Quote', 'Los que buscan las leyes de la Naturaleza como un apoyo para sus nuevas obras colaboran con el creador. [Antoni Gaudi]')
+
     # Signal and Slot Support [3]
     # [3]: http://pyqt.sourceforge.net/Docs/PyQt4/new_style_signals_slots.html
     def setupConnections(self):
         self.connect(self.ui.lineEdit, QtCore.SIGNAL('textEdited(QString)'), self.convertPascalPressure)
         self.connect(self.ui.lineEdit_2, QtCore.SIGNAL('textEdited(QString)'), self.convertNewtonPressure)
-        # External link Qt way and Pythonistic way
+        # Click button
         self.connect(self.ui.pushButton_5, QtCore.SIGNAL('clicked()'), self.linkUrl)
+        # Trig dialog About
+        self.connect(self.ui.actionAbout, QtCore.SIGNAL('triggered()'), self.showDialog)
+        # Trig dialog Quit MainWindow
+        self.connect(self.ui.actionQuit, QtCore.SIGNAL('triggered()'), self.deleteLater)
+        # Trig dialog Quote
+        self.connect(self.ui.actionQuote, QtCore.SIGNAL('triggered()'), self.showQuote)
+
+    def setupExtra(self):
         #self.ui.pushButton_5.clicked.connect(self.linkUrl)
+        #self.ui.actionAbout.triggered.connect(self.showDialog)
+        self.ui.actionAbout.setShortcut('F1')
+        self.ui.actionAbout.setStatusTip('About')
+        self.ui.actionQuit.setShortcut('Ctrl+Q')
+        self.ui.actionQuit.setStatusTip('Quit')

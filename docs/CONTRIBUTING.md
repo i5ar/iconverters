@@ -18,4 +18,4 @@ reStructuredText to HyperText Markup Language:
 
 **Thank you for your suggestions**!
 
-[Pandoc]: http://johnmacfarlane.net/pandoc/
+[Pandoc]: http://pandoc.org

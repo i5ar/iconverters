@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'MainWindow.ui'
 #
-# Created: Mon Mar 16 23:19:29 2015
+# Created: Tue Mar 17 08:54:08 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -134,7 +134,7 @@ class Ui_MainWindow(object):
         self.formLayout_2.setWidget(2, QtGui.QFormLayout.FieldRole, self.lineEdit_9)
         self.verticalLayout_5.addLayout(self.formLayout_2)
         self.pushButton_5 = QtGui.QPushButton(self.groupBox)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Preferred)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.pushButton_5.sizePolicy().hasHeightForWidth())
@@ -181,6 +181,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_2 = QtGui.QVBoxLayout(self.groupBox_3)
         self.verticalLayout_2.setObjectName(_fromUtf8("verticalLayout_2"))
         self.formLayout = QtGui.QFormLayout()
+        self.formLayout.setFieldGrowthPolicy(QtGui.QFormLayout.AllNonFixedFieldsGrow)
         self.formLayout.setLabelAlignment(QtCore.Qt.AlignCenter)
         self.formLayout.setFormAlignment(QtCore.Qt.AlignCenter)
         self.formLayout.setObjectName(_fromUtf8("formLayout"))
@@ -295,10 +296,13 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
         self.actionAbout = QtGui.QAction(MainWindow)
         self.actionAbout.setObjectName(_fromUtf8("actionAbout"))
-        self.actionClose = QtGui.QAction(MainWindow)
-        self.actionClose.setObjectName(_fromUtf8("actionClose"))
+        self.actionQuit = QtGui.QAction(MainWindow)
+        self.actionQuit.setObjectName(_fromUtf8("actionQuit"))
+        self.actionQuote = QtGui.QAction(MainWindow)
+        self.actionQuote.setObjectName(_fromUtf8("actionQuote"))
         self.menuHelp.addAction(self.actionAbout)
-        self.menuFile.addAction(self.actionClose)
+        self.menuHelp.addAction(self.actionQuote)
+        self.menuFile.addAction(self.actionQuit)
         self.menubar.addAction(self.menuFile.menuAction())
         self.menubar.addAction(self.menuHelp.menuAction())
 
@@ -340,5 +344,6 @@ class Ui_MainWindow(object):
         self.menuHelp.setTitle(_translate("MainWindow", "Help", None))
         self.menuFile.setTitle(_translate("MainWindow", "File", None))
         self.actionAbout.setText(_translate("MainWindow", "About", None))
-        self.actionClose.setText(_translate("MainWindow", "Exit", None))
+        self.actionQuit.setText(_translate("MainWindow", "Quit", None))
+        self.actionQuote.setText(_translate("MainWindow", "Quote", None))
 
