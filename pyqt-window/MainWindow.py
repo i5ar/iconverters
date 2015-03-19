@@ -2,6 +2,7 @@ import webbrowser
 
 from PyQt4 import QtCore, QtGui
 from MainWindowUi import Ui_MainWindow
+#from ChildWindowUi import
 
 class MainWindow(QtGui.QMainWindow):
     def __init__(self):
@@ -82,17 +83,20 @@ class MainWindow(QtGui.QMainWindow):
 
     # External link [2]
     # [2]: http://stackoverflow.com/questions/3684857/pyqt4-open-website-in-standard-browser-on-button-click
-    def linkUrl(self):
+    def linkStress(self):
         print("The web page!")
         webbrowser.open('https://github.com/i5ar/isarchon/blob/master/docs/stress.rst')
+
+    def linkLighting(self):
+        webbrowser.open('https://github.com/i5ar/isarchon/blob/master/docs/lighting.md')
 
     def showDialog(self):
         QtGui.QMessageBox.about(self, 'About', '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><html><head><meta name="qrichtext" content="1" /><style type="text/css">p, li { white-space: pre-wrap; }</style></head>'
                                                '<body style=" font-family:\'MS Shell Dlg 2\'; font-size:12pt; font-weight:400; font-style:normal;">'
                                                '<p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">A simple unit converter for architects.</span></p>'
                                                '<p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Version 0.0.1</span></p>'
-                                               '<p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Copyright (c) 2015, </span><span style=" font-size:10pt; font-weight:600;">iSar</span></p>'
-                                               '<p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><a href="http://three.isarch.it"><span style=" font-size:10pt; text-decoration: underline; color:#0000ff;">www.isarch.it</span></a></p>'
+                                               '<p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">Copyright (c) 2015, iSar</span></p>'
+                                               '<p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><a href="http://isarch.it"><span style=" font-size:10pt; text-decoration: underline; color:#0000ff;">www.isarch.it</span></a></p>'
                                                '</body></html>')
 
     def showQuote(self):
@@ -104,7 +108,8 @@ class MainWindow(QtGui.QMainWindow):
         self.connect(self.ui.lineEdit, QtCore.SIGNAL('textEdited(QString)'), self.convertPascalPressure)
         self.connect(self.ui.lineEdit_2, QtCore.SIGNAL('textEdited(QString)'), self.convertNewtonPressure)
         # Click button
-        self.connect(self.ui.pushButton_5, QtCore.SIGNAL('clicked()'), self.linkUrl)
+        self.connect(self.ui.pushButton_5, QtCore.SIGNAL('clicked()'), self.linkStress)
+        self.connect(self.ui.pushButton, QtCore.SIGNAL('clicked()'), self.linkLighting)
         # Trig dialog About
         self.connect(self.ui.actionAbout, QtCore.SIGNAL('triggered()'), self.showDialog)
         # Trig dialog Quit MainWindow

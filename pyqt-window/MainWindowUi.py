@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'MainWindow.ui'
 #
-# Created: Tue Mar 17 08:54:08 2015
+# Created: Thu Mar 19 20:18:52 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -159,18 +159,25 @@ class Ui_MainWindow(object):
         self.formLayout_4.setLabelAlignment(QtCore.Qt.AlignCenter)
         self.formLayout_4.setFormAlignment(QtCore.Qt.AlignCenter)
         self.formLayout_4.setObjectName(_fromUtf8("formLayout_4"))
-        self.label_5 = QtGui.QLabel(self.groupBox_4)
-        self.label_5.setObjectName(_fromUtf8("label_5"))
-        self.formLayout_4.setWidget(0, QtGui.QFormLayout.LabelRole, self.label_5)
         self.lineEdit_6 = QtGui.QLineEdit(self.groupBox_4)
         self.lineEdit_6.setObjectName(_fromUtf8("lineEdit_6"))
         self.formLayout_4.setWidget(0, QtGui.QFormLayout.FieldRole, self.lineEdit_6)
-        self.label_7 = QtGui.QLabel(self.groupBox_4)
-        self.label_7.setObjectName(_fromUtf8("label_7"))
-        self.formLayout_4.setWidget(1, QtGui.QFormLayout.LabelRole, self.label_7)
         self.lineEdit_8 = QtGui.QLineEdit(self.groupBox_4)
         self.lineEdit_8.setObjectName(_fromUtf8("lineEdit_8"))
         self.formLayout_4.setWidget(1, QtGui.QFormLayout.FieldRole, self.lineEdit_8)
+        self.comboBox_5 = QtGui.QComboBox(self.groupBox_4)
+        self.comboBox_5.setMinimumSize(QtCore.QSize(80, 0))
+        self.comboBox_5.setObjectName(_fromUtf8("comboBox_5"))
+        self.comboBox_5.addItem(_fromUtf8(""))
+        self.comboBox_5.addItem(_fromUtf8(""))
+        self.comboBox_5.addItem(_fromUtf8(""))
+        self.formLayout_4.setWidget(1, QtGui.QFormLayout.LabelRole, self.comboBox_5)
+        self.comboBox_6 = QtGui.QComboBox(self.groupBox_4)
+        self.comboBox_6.setMinimumSize(QtCore.QSize(80, 0))
+        self.comboBox_6.setObjectName(_fromUtf8("comboBox_6"))
+        self.comboBox_6.addItem(_fromUtf8(""))
+        self.comboBox_6.addItem(_fromUtf8(""))
+        self.formLayout_4.setWidget(0, QtGui.QFormLayout.LabelRole, self.comboBox_6)
         self.verticalLayout_3.addLayout(self.formLayout_4)
         self.pushButton_2 = QtGui.QPushButton(self.groupBox_4)
         self.pushButton_2.setObjectName(_fromUtf8("pushButton_2"))
@@ -311,7 +318,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow", None))
-        self.label_2.setText(_translate("MainWindow", "Description", None))
+        self.label_2.setText(_translate("MainWindow", "UNDER CONSTRUCTION", None))
         self.groupBox.setTitle(_translate("MainWindow", "Stress", None))
         self.comboBox.setItemText(0, _translate("MainWindow", "Pa (N/m²)", None))
         self.comboBox.setItemText(1, _translate("MainWindow", "MPa", None))
@@ -322,13 +329,16 @@ class Ui_MainWindow(object):
         self.comboBox_4.setItemText(0, _translate("MainWindow", "psf", None))
         self.comboBox_4.setItemText(1, _translate("MainWindow", "psi", None))
         self.pushButton_5.setText(_translate("MainWindow", "PushButton", None))
-        self.groupBox_4.setTitle(_translate("MainWindow", "Luminance", None))
-        self.label_5.setText(_translate("MainWindow", "cd/m²", None))
-        self.label_7.setText(_translate("MainWindow", "TextLabel", None))
+        self.groupBox_4.setTitle(_translate("MainWindow", "Weight", None))
+        self.comboBox_5.setItemText(0, _translate("MainWindow", "Long Tons", None))
+        self.comboBox_5.setItemText(1, _translate("MainWindow", "Short Tons", None))
+        self.comboBox_5.setItemText(2, _translate("MainWindow", "Pounds", None))
+        self.comboBox_6.setItemText(0, _translate("MainWindow", "Tonnes", None))
+        self.comboBox_6.setItemText(1, _translate("MainWindow", "Kg", None))
         self.pushButton_2.setText(_translate("MainWindow", "PushButton", None))
         self.groupBox_3.setTitle(_translate("MainWindow", "Illuminance", None))
         self.label_4.setText(_translate("MainWindow", "Lux (lx)", None))
-        self.label_6.setText(_translate("MainWindow", "TextLabel", None))
+        self.label_6.setText(_translate("MainWindow", "Foot-candle (fc)", None))
         self.pushButton.setText(_translate("MainWindow", "PushButton", None))
         self.groupBox_2.setTitle(_translate("MainWindow", "Length", None))
         self.label.setText(_translate("MainWindow", "Metres (m)", None))
@@ -340,7 +350,7 @@ class Ui_MainWindow(object):
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Here is a clipboard...</span></p></body></html>", None))
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
         self.menuHelp.setTitle(_translate("MainWindow", "Help", None))
         self.menuFile.setTitle(_translate("MainWindow", "File", None))
         self.actionAbout.setText(_translate("MainWindow", "About", None))
