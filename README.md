@@ -9,7 +9,7 @@ iSarchon
 
 ### Windows
 
-Save the `/dist` folder in `/Program Files` and run the `.exe` file.
+Extract `dist.zip` in `/Program Files` and run `isarchon.exe`.
 
 ### Linux/Mac
 

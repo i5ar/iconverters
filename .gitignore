@@ -20,12 +20,12 @@ $RECYCLE.BIN/
 ## Python
 #############
 
-#*.py[cod]
+*.py[cod]
 
 # Packages
 *.egg
 *.egg-info
-#dist/
+dist/
 build/
 eggs/
 parts/
