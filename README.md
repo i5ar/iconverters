@@ -1,5 +1,5 @@
 iSarchon
-==============
+========
 
 :triangular_ruler: A unit converter for lazy architects.
 
@@ -9,7 +9,7 @@ iSarchon
 
 ### Windows
 
-Extract `dist.zip` in `/Program Files` and run `isarchon.exe`.
+Extract `dist.zip` in the main program files folder and run the executable.
 
 ### Linux/Mac
 

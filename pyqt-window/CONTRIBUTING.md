@@ -9,4 +9,3 @@ In order to create an `.exe` file run the command below:
 
 	>>> cd c:\python34\lib\isarchon\pyqt-window
 	>>> python setup.py py2exe
-
