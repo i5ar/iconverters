@@ -2,7 +2,6 @@ import webbrowser
 
 from PyQt4 import QtCore, QtGui
 from MainWindowUi import Ui_MainWindow
-#from ChildWindowUi import
 
 class MainWindow(QtGui.QMainWindow):
     def __init__(self):
