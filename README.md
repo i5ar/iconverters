@@ -9,7 +9,7 @@ iSarchon
 
 ### Windows
 
-Download the repository and extract `dist.zip` in the main program files folder and run the executable.
+Download the repository and extract `dist.zip` in the main program files folder, then run the executable.
 
 ### Linux/Mac
 
