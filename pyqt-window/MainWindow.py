@@ -15,7 +15,7 @@ class MainWindow(QtGui.QMainWindow):
         iSarValidator = QtGui.QDoubleValidator()
         iSarValidator.setNotation(QtGui.QDoubleValidator.StandardNotation)
         self.ui.lineEdit.setValidator(iSarValidator)
-        self.ui.lineEdit_2.setValidator(iSarValidator)
+        self.ui.lineEdit_Newton.setValidator(iSarValidator)
 
         # Signal/slot connections
         self.setupConnections()
@@ -24,33 +24,39 @@ class MainWindow(QtGui.QMainWindow):
     def convertPascalPressure(self, text):
 
         if len(text) == 0:
-            self.ui.lineEdit_2.clear()
+            self.ui.lineEdit_Newton.clear()
             return
 
         # QComboBox Class Reference [1]
         # [1]: http://pyqt.sourceforge.net/Docs/PyQt4/qcombobox.html
-        index = int(self.ui.comboBox.currentIndex())
-        index_2 = int(self.ui.comboBox_2.currentIndex())
+        index_Pascal = int(self.ui.comboBox_Pascal.currentIndex())
+        index_NewtonSquareMeter = int(self.ui.comboBox_NewtonSquareMeter.currentIndex())
+        index_GramSquareMeter = int(self.ui.comboBox_GramSquareMeter.currentIndex())
+        index_PoundSquareFoot = int(self.ui.comboBox_PoundSquareFoot.currentIndex())
 
-        if index == 0 and index_2 == 0: # Pa - kN/mmq
-            pascal = float(text)
-            knewton_per_mmq = pascal * (1. / 1000000000.)
-            self.ui.lineEdit_2.setText(str(knewton_per_mmq))
-
-        if index == 1 and index_2 == 0: # MPa - kN/mmq
+        if index_Pascal == 0 and index_NewtonSquareMeter == 0 and index_GramSquareMeter == 0 and index_PoundSquareFoot == 0:
             mpascal = float(text)
-            knewton_per_mmq = mpascal / 1000.
-            self.ui.lineEdit_2.setText(str(knewton_per_mmq))
+            newton_per_smm = mpascal
+            kg_per_smm = mpascal / 9.8
+            pound_per_sf = mpascal * 20885.4342730
+            self.ui.lineEdit_Newton.setText(str(newton_per_smm))
+            self.ui.lineEdit_Gram.setText(str(kg_per_smm))
+            self.ui.lineEdit_Pound.setText(str(pound_per_sf))
 
-        if index == 0 and index_2 == 1: # Pa - N/mmq
+        if index_Pascal == 1 and index_NewtonSquareMeter == 0: # Pa - N/smm
             pascal = float(text)
-            newton_per_mmq = pascal / 1000000.
-            self.ui.lineEdit_2.setText(str(newton_per_mmq))
+            newton_per_smm = pascal / 1000000.
+            self.ui.lineEdit_Newton.setText(str(newton_per_smm))
 
-        if index == 1 and index_2 == 1: # MPa - N/mmq
+        if index_Pascal == 0 and index_NewtonSquareMeter == 1: # MPa - kN/smm
             mpascal = float(text)
-            newton_per_mmq = mpascal
-            self.ui.lineEdit_2.setText(str(newton_per_mmq))
+            knewton_per_smm = mpascal * 1000.
+            self.ui.lineEdit_Newton.setText(str(knewton_per_smm))
+
+        if index_Pascal == 1 and index_NewtonSquareMeter == 1: # Pa - kN/sm
+            pascal = float(text)
+            knewton_per_sm = pascal / 1000.
+            self.ui.lineEdit_Newton.setText(str(knewton_per_sm))
 
     def convertNewtonPressure(self, text):
 
@@ -58,27 +64,74 @@ class MainWindow(QtGui.QMainWindow):
             self.ui.lineEdit.clear()
             return
 
-        index = int(self.ui.comboBox.currentIndex())
-        index_2 = int(self.ui.comboBox_2.currentIndex())
-        if index == 0 and index_2 == 0: # Pa - kN/mmq
-            knewton_per_mmq = float(text)
-            pascal = knewton_per_mmq * 1000000000.
+        index_Pascal = int(self.ui.comboBox_Pascal.currentIndex())
+        index_NewtonSquareMeter = int(self.ui.comboBox_NewtonSquareMeter.currentIndex())
+        index_GramSquareMeter = int(self.ui.comboBox_GramSquareMeter.currentIndex())
+        index_PoundSquareFoot = int(self.ui.comboBox_PoundSquareFoot.currentIndex())
+
+        if index_Pascal == 0 and index_NewtonSquareMeter == 0 and index_GramSquareMeter == 0 and index_PoundSquareFoot == 0:
+            newton_per_smm = float(text)
+            mpascal = newton_per_smm
+            kg_per_smm = newton_per_smm / 9.8
+            pound_per_sf = newton_per_smm * 20890
+            self.ui.lineEdit.setText(str(mpascal))
+            self.ui.lineEdit_Gram.setText(str(kg_per_smm))
+            self.ui.lineEdit_Pound.setText(str(pound_per_sf))
+
+        if index_Pascal == 1 and index_NewtonSquareMeter == 0: # Pa - N/smm
+            newton_per_smm = float(text)
+            pascal = newton_per_smm * 1000000.
             self.ui.lineEdit.setText(str(pascal))
 
-        if index == 1 and index_2 == 0: # MPa - kN/mmq
-            knewton_per_mmq = float(text)
-            mpascal = knewton_per_mmq * 1000.
+        if index_Pascal == 0 and index_NewtonSquareMeter == 1: # MPa - kN/smm
+            knewton_per_smm = float(text)
+            mpascal = knewton_per_smm / 1000.
             self.ui.lineEdit.setText(str(mpascal))
 
-        if index == 0 and index_2 == 1: # Pa - N/mmq
-            newton_per_mmq = float(text)
-            pascal = newton_per_mmq * 1000000.
+        if index_Pascal == 1 and index_NewtonSquareMeter == 1: # Pa - kN/sm
+            knewton_per_sm = float(text)
+            pascal = knewton_per_sm * 1000.
             self.ui.lineEdit.setText(str(pascal))
 
-        if index == 1 and index_2 == 1: # MPa - N/mmq
-            newton_per_mmq = float(text)
-            mpascal = newton_per_mmq
+    def convertKgSquareMeterPressure(self, text):
+
+        if len(text) == 0:
+            self.ui.lineEdit_Gram.clear()
+            return
+
+        index_Pascal = int(self.ui.comboBox_Pascal.currentIndex())
+        index_NewtonSquareMeter = int(self.ui.comboBox_NewtonSquareMeter.currentIndex())
+        index_GramSquareMeter = int(self.ui.comboBox_GramSquareMeter.currentIndex())
+        index_PoundSquareFoot = int(self.ui.comboBox_PoundSquareFoot.currentIndex())
+
+        if index_Pascal == 0 and index_NewtonSquareMeter == 0 and index_GramSquareMeter == 0 and index_PoundSquareFoot == 0:
+            kg_per_smm = float(text)
+            mpascal = kg_per_smm * 9.8
+            newton_per_smm = kg_per_smm * 9.8
+            pound_per_sf = kg_per_smm * 204816.182037424
+            self.ui.lineEdit.setText(str(newton_per_smm))
+            self.ui.lineEdit_Newton.setText(str(mpascal))
+            self.ui.lineEdit_Pound.setText(str(pound_per_sf))
+
+    def convertPoundSquareFootPressure(self, text):
+
+        if len(text) == 0:
+            self.ui.lineEdit_Gram.clear()
+            return
+
+        index_Pascal = int(self.ui.comboBox_Pascal.currentIndex())
+        index_NewtonSquareMeter = int(self.ui.comboBox_NewtonSquareMeter.currentIndex())
+        index_GramSquareMeter = int(self.ui.comboBox_GramSquareMeter.currentIndex())
+        index_PoundSquareFoot = int(self.ui.comboBox_PoundSquareFoot.currentIndex())
+
+        if index_Pascal == 0 and index_NewtonSquareMeter == 0 and index_GramSquareMeter == 0 and index_PoundSquareFoot == 0:
+            pound_per_sf = float(text)
+            mpascal = pound_per_sf * 1 / 204816.182037424 * 9.8
+            newton_per_smm = pound_per_sf * 1 / 204816.182037424 * 9.8
+            kg_per_smm = pound_per_sf * 1 / 204816.182037424
             self.ui.lineEdit.setText(str(mpascal))
+            self.ui.lineEdit_Newton.setText(str(newton_per_smm))
+            self.ui.lineEdit_Gram.setText(str(kg_per_smm))
 
     # External link [2]
     # [2]: http://stackoverflow.com/questions/3684857/pyqt4-open-website-in-standard-browser-on-button-click
@@ -105,19 +158,21 @@ class MainWindow(QtGui.QMainWindow):
     # [3]: http://pyqt.sourceforge.net/Docs/PyQt4/new_style_signals_slots.html
     def setupConnections(self):
         self.connect(self.ui.lineEdit, QtCore.SIGNAL('textEdited(QString)'), self.convertPascalPressure)
-        self.connect(self.ui.lineEdit_2, QtCore.SIGNAL('textEdited(QString)'), self.convertNewtonPressure)
+        self.connect(self.ui.lineEdit_Newton, QtCore.SIGNAL('textEdited(QString)'), self.convertNewtonPressure)
+        self.connect(self.ui.lineEdit_Gram, QtCore.SIGNAL('textEdited(QString)'), self.convertKgSquareMeterPressure)
+        self.connect(self.ui.lineEdit_Pound, QtCore.SIGNAL('textEdited(QString)'), self.convertPoundSquareFootPressure)
         # Click button
-        self.connect(self.ui.pushButton_5, QtCore.SIGNAL('clicked()'), self.linkStress)
-        self.connect(self.ui.pushButton, QtCore.SIGNAL('clicked()'), self.linkLighting)
+        self.connect(self.ui.pushButton_Stress, QtCore.SIGNAL('clicked()'), self.linkStress)
+        self.connect(self.ui.pushButton_Illuminance, QtCore.SIGNAL('clicked()'), self.linkLighting)
         # Trig dialog About
         self.connect(self.ui.actionAbout, QtCore.SIGNAL('triggered()'), self.showDialog)
-        # Trig dialog Quit MainWindow
+        # Trig dialog Quit iSarchon
         self.connect(self.ui.actionQuit, QtCore.SIGNAL('triggered()'), self.deleteLater)
         # Trig dialog Quote
         self.connect(self.ui.actionQuote, QtCore.SIGNAL('triggered()'), self.showQuote)
 
     def setupExtra(self):
-        #self.ui.pushButton_5.clicked.connect(self.linkUrl)
+        #self.ui.pushButton_Illuminance.clicked.connect(self.linkLighting)
         #self.ui.actionAbout.triggered.connect(self.showDialog)
         self.ui.actionAbout.setShortcut('F1')
         self.ui.actionAbout.setStatusTip('About')
