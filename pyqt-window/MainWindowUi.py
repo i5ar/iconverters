@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'MainWindow.ui'
 #
-# Created: Sat Mar 21 06:44:03 2015
+# Created: Sat Mar 21 15:31:44 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -303,8 +303,11 @@ class Ui_MainWindow(object):
         self.actionQuit.setObjectName(_fromUtf8("actionQuit"))
         self.actionQuote = QtGui.QAction(MainWindow)
         self.actionQuote.setObjectName(_fromUtf8("actionQuote"))
+        self.actionTip = QtGui.QAction(MainWindow)
+        self.actionTip.setObjectName(_fromUtf8("actionTip"))
         self.menuHelp.addAction(self.actionAbout)
         self.menuHelp.addAction(self.actionQuote)
+        self.menuHelp.addAction(self.actionTip)
         self.menuFile.addAction(self.actionQuit)
         self.menubar.addAction(self.menuFile.menuAction())
         self.menubar.addAction(self.menuHelp.menuAction())
@@ -352,4 +355,5 @@ class Ui_MainWindow(object):
         self.actionAbout.setText(_translate("MainWindow", "About", None))
         self.actionQuit.setText(_translate("MainWindow", "Quit", None))
         self.actionQuote.setText(_translate("MainWindow", "Quote", None))
+        self.actionTip.setText(_translate("MainWindow", "Tip of the Day", None))
 

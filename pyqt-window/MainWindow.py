@@ -2,6 +2,15 @@ import webbrowser
 
 from PyQt4 import QtCore, QtGui
 from MainWindowUi import Ui_MainWindow
+from ChildDialogUi import Ui_ChildDialog
+from DialogUi import Ui_Dialog
+
+name        = "iSarchon"
+author      = "Pierpaolo Rasicci"
+version     = "1.0"
+link        = ""
+email       = ""
+licence     = "GPL"
 
 class MainWindow(QtGui.QMainWindow):
     def __init__(self):
@@ -20,6 +29,9 @@ class MainWindow(QtGui.QMainWindow):
         # Signal/slot connections
         self.setupConnections()
         self.setupExtra()
+
+        # Trig dialog Quote
+        self.dialogQuoteBrowser = Ui_ChildDialog(self)
 
     def convertPascalPressure(self, text):
 
@@ -142,7 +154,7 @@ class MainWindow(QtGui.QMainWindow):
     def linkLighting(self):
         webbrowser.open('https://github.com/i5ar/isarchon/blob/master/docs/lighting.md')
 
-    def showDialog(self):
+    def showAboutDialog(self):
         QtGui.QMessageBox.about(self, 'About', '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><html><head><meta name="qrichtext" content="1" /><style type="text/css">p, li { white-space: pre-wrap; }</style></head>'
                                                '<body style=" font-family:\'MS Shell Dlg 2\'; font-size:12pt; font-weight:400; font-style:normal;">'
                                                '<p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt;">A simple unit converter for architects.</span></p>'
@@ -151,8 +163,30 @@ class MainWindow(QtGui.QMainWindow):
                                                '<p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><a href="http://isarch.it"><span style=" font-size:10pt; text-decoration: underline; color:#0000ff;">www.isarch.it</span></a></p>'
                                                '</body></html>')
 
-    def showQuote(self):
-        QtGui.QMessageBox.about(self, 'Quote', 'Los que buscan las leyes de la Naturaleza como un apoyo para sus nuevas obras colaboran con el creador. [Antoni Gaudi]')
+    # Trig dialog Quote
+    @QtCore.pyqtSlot()
+    def showQuoteDialog(self):
+        self.dialogQuoteBrowser.exec_()
+
+    # Trig dialog Tip
+    def showTipDialog(self):
+        dialog = QtGui.QDialog()
+        dialog.ui = Ui_Dialog()
+        dialog.ui.setupUi(dialog)
+        dialog.setAttribute(QtCore.Qt.WA_DeleteOnClose)
+        dialog.exec_()
+
+    '''
+    # Trig dialog Tip [5]
+    # [5]: http://stackoverflow.com/questions/1807299/open-a-second-window-in-pyqt
+    def on_actionTip_triggered(self, checked=None):
+        if checked==None: return
+        dialog = QtGui.QDialog()
+        dialog.ui = Ui_Dialog()
+        dialog.ui.setupUi(dialog)
+        dialog.setAttribute(QtCore.Qt.WA_DeleteOnClose)
+        dialog.exec_()
+    '''
 
     # Signal and Slot Support [3]
     # [3]: http://pyqt.sourceforge.net/Docs/PyQt4/new_style_signals_slots.html
@@ -165,15 +199,20 @@ class MainWindow(QtGui.QMainWindow):
         self.connect(self.ui.pushButton_Stress, QtCore.SIGNAL('clicked()'), self.linkStress)
         self.connect(self.ui.pushButton_Illuminance, QtCore.SIGNAL('clicked()'), self.linkLighting)
         # Trig dialog About
-        self.connect(self.ui.actionAbout, QtCore.SIGNAL('triggered()'), self.showDialog)
+        self.connect(self.ui.actionAbout, QtCore.SIGNAL('triggered()'), self.showAboutDialog)
         # Trig dialog Quit iSarchon
         self.connect(self.ui.actionQuit, QtCore.SIGNAL('triggered()'), self.deleteLater)
-        # Trig dialog Quote
-        self.connect(self.ui.actionQuote, QtCore.SIGNAL('triggered()'), self.showQuote)
+        # Trig dialog Quote [4]
+        # [4] http://stackoverflow.com/questions/14410152/pyqt-on-click-open-new-window
+        self.connect(self.ui.actionQuote, QtCore.SIGNAL('triggered()'), self.showQuoteDialog)
+        # Trig dialog Tip
+        self.connect(self.ui.actionTip, QtCore.SIGNAL('triggered()'), self.showTipDialog)
 
     def setupExtra(self):
+        '''Pythonist'''
         #self.ui.pushButton_Illuminance.clicked.connect(self.linkLighting)
         #self.ui.actionAbout.triggered.connect(self.showDialog)
+        #self.ui.actionQuote.triggered.connect(self.showTipDialog)
         self.ui.actionAbout.setShortcut('F1')
         self.ui.actionAbout.setStatusTip('About')
         self.ui.actionQuit.setShortcut('Ctrl+Q')
