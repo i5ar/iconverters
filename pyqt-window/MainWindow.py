@@ -188,6 +188,7 @@ class MainWindow(QtGui.QMainWindow):
         dialog.exec_()
     '''
 
+
     # Signal and Slot Support [3]
     # [3]: http://pyqt.sourceforge.net/Docs/PyQt4/new_style_signals_slots.html
     def setupConnections(self):
@@ -217,3 +218,25 @@ class MainWindow(QtGui.QMainWindow):
         self.ui.actionAbout.setStatusTip('About')
         self.ui.actionQuit.setShortcut('Ctrl+Q')
         self.ui.actionQuit.setStatusTip('Quit')
+
+'''Not Working'''
+class Dialog(QtGui.QDialog):
+    def __init__(self):
+        QtGui.QDialog.__init__(self)
+
+        # Add user interface elements.
+        self.ui = Ui_Dialog()
+        self.ui.setupUi(self)
+
+        # Signal/slot connections
+        self.setupDialogConnections()
+
+    def linkNextTip(self, text):
+        self.ui.lineEdit.setText(str('Next content'))
+
+    def linkPreviousTip(self, text):
+        self.ui.lineEdit.setText(str('Previous content'))
+
+    def setupDialogConnections(self):
+        self.connect(self.ui.pushButton_Next, QtCore.SIGNAL('clicked()'), self.linkNextTip)
+        self.connect(self.ui.pushButton_Previous, QtCore.SIGNAL('clicked()'), self.linkPreviousTip)

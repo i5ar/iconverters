@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'Widget.ui'
+#
+# Created: Sat Mar 21 22:12:54 2015
+#      by: PyQt4 UI code generator 4.11.3
+#
+# WARNING! All changes made in this file will be lost!
+
 from PyQt4 import QtCore, QtGui
 
 try:
@@ -16,19 +25,27 @@ except AttributeError:
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
-
         Dialog.setObjectName(_fromUtf8("Dialog"))
         Dialog.resize(400, 300)
         self.verticalLayout = QtGui.QVBoxLayout(Dialog)
         self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
-        self.textBrowser = QtGui.QTextBrowser(Dialog)
-        self.textBrowser.setObjectName(_fromUtf8("textBrowser"))
-        self.verticalLayout.addWidget(self.textBrowser)
+        self.lineEdit = QtGui.QLineEdit(Dialog)
+        self.lineEdit.setObjectName(_fromUtf8("lineEdit"))
+        self.verticalLayout.addWidget(self.lineEdit)
+        self.gridLayout = QtGui.QGridLayout()
+        self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
+        self.pushButton_Next = QtGui.QPushButton(Dialog)
+        self.pushButton_Next.setObjectName(_fromUtf8("pushButton_Next"))
+        self.gridLayout.addWidget(self.pushButton_Next, 0, 1, 1, 1)
         self.buttonBox = QtGui.QDialogButtonBox(Dialog)
         self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
-        self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Cancel|QtGui.QDialogButtonBox.Ok)
+        self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Close)
         self.buttonBox.setObjectName(_fromUtf8("buttonBox"))
-        self.verticalLayout.addWidget(self.buttonBox)
+        self.gridLayout.addWidget(self.buttonBox, 0, 2, 1, 1)
+        self.pushButton_Previous = QtGui.QPushButton(Dialog)
+        self.pushButton_Previous.setObjectName(_fromUtf8("pushButton_Previous"))
+        self.gridLayout.addWidget(self.pushButton_Previous, 0, 0, 1, 1)
+        self.verticalLayout.addLayout(self.gridLayout)
 
         self.retranslateUi(Dialog)
         QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("accepted()")), Dialog.accept)
@@ -37,9 +54,7 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(_translate("Dialog", "Dialog", None))
-        self.textBrowser.setHtml(_translate("Dialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">Tip of the Day.</span></p></body></html>", None))
+        self.lineEdit.setText(_translate("Dialog", "Test", None))
+        self.pushButton_Next.setText(_translate("Dialog", "Next Tip", None))
+        self.pushButton_Previous.setText(_translate("Dialog", "Previous Tip", None))
 
