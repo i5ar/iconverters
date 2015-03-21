@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>iSarchon</class>
- <widget class="QMainWindow" name="iSarchon">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
   <property name="windowModality">
    <enum>Qt::NonModal</enum>
   </property>
@@ -20,7 +20,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>iSarchon</string>
   </property>
   <property name="windowIcon">
    <iconset>

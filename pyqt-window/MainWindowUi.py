@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'MainWindow.ui'
 #
-# Created: Sat Mar 21 05:59:53 2015
+# Created: Sat Mar 21 06:44:03 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -313,7 +313,7 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow", None))
+        MainWindow.setWindowTitle(_translate("MainWindow", "iSarchon", None))
         self.label_Description.setText(_translate("MainWindow", "UNDER CONSTRUCTION", None))
         self.groupBox_Stress.setTitle(_translate("MainWindow", "Stress", None))
         self.comboBox_Pascal.setItemText(0, _translate("MainWindow", "MPa", None))
