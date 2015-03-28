@@ -7,13 +7,13 @@ iSarchon
 
 ### Installation and required packages
 
-- Windows
+##### Windows
     
-    Download the repository and extract `dist.zip` in the main program files folder, then run the executable.
+Download the repository and extract `dist.zip` in the main program files folder, then run the executable.
 
-- Linux/Mac
+##### Linux/Mac
     
-    Download the repository and run the `main.py` script.
+Download the repository and run the `main.py` script.
 
 ### Contribute
 
