@@ -33,6 +33,9 @@ class MainWindow(QtGui.QMainWindow):
         # Trig dialog Quote
         self.dialogQuoteBrowser = Ui_ChildDialog(self)
 
+        # Trig dialog Tip
+        #self.dialog = Ui_Dialog(self)
+
     def convertPascalPressure(self, text):
 
         if len(text) == 0:
@@ -169,6 +172,7 @@ class MainWindow(QtGui.QMainWindow):
         self.dialogQuoteBrowser.exec_()
 
     # Trig dialog Tip
+    @QtCore.pyqtSlot()
     def showTipDialog(self):
         dialog = QtGui.QDialog()
         dialog.ui = Ui_Dialog()
@@ -187,7 +191,6 @@ class MainWindow(QtGui.QMainWindow):
         dialog.setAttribute(QtCore.Qt.WA_DeleteOnClose)
         dialog.exec_()
     '''
-
 
     # Signal and Slot Support [3]
     # [3]: http://pyqt.sourceforge.net/Docs/PyQt4/new_style_signals_slots.html
@@ -217,26 +220,3 @@ class MainWindow(QtGui.QMainWindow):
         self.ui.actionAbout.setShortcut('F1')
         self.ui.actionAbout.setStatusTip('About')
         self.ui.actionQuit.setShortcut('Ctrl+Q')
-        self.ui.actionQuit.setStatusTip('Quit')
-
-'''Not Working'''
-class Dialog(QtGui.QDialog):
-    def __init__(self):
-        QtGui.QDialog.__init__(self)
-
-        # Add user interface elements.
-        self.ui = Ui_Dialog()
-        self.ui.setupUi(self)
-
-        # Signal/slot connections
-        self.setupDialogConnections()
-
-    def linkNextTip(self, text):
-        self.ui.lineEdit.setText(str('Next content'))
-
-    def linkPreviousTip(self, text):
-        self.ui.lineEdit.setText(str('Previous content'))
-
-    def setupDialogConnections(self):
-        self.connect(self.ui.pushButton_Next, QtCore.SIGNAL('clicked()'), self.linkNextTip)
-        self.connect(self.ui.pushButton_Previous, QtCore.SIGNAL('clicked()'), self.linkPreviousTip)
