@@ -5,17 +5,15 @@ iSarchon
 
 > Work in progress!
 
-# Installation and required packages
+### Installation and required packages
 
-### Windows
+- Windows
+    Download the repository and extract `dist.zip` in the main program files folder, then run the executable.
 
-Download the repository and extract `dist.zip` in the main program files folder, then run the executable.
+- Linux/Mac
+    Download the repository and run the `main.py` script.
 
-### Linux/Mac
-
-Download the repository and run the `main.py` script.
-
-# Contribute
+### Contribute
 
 In order to convert the `.iu`  markup to a `.py` script run the command below:
 	
