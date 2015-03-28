@@ -8,9 +8,11 @@ iSarchon
 ### Installation and required packages
 
 - Windows
+    
     Download the repository and extract `dist.zip` in the main program files folder, then run the executable.
 
 - Linux/Mac
+    
     Download the repository and run the `main.py` script.
 
 ### Contribute
