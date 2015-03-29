@@ -31,8 +31,10 @@ In order to create an `.exe` file run the command below:
 
 ### Licence
 
-GPL
+[GNU General Public License]
 
 Copyright (c) 2015, Pierpaolo Rasicci
 
 All rights reserved.
+
+[GNU General Public License]:http://www.gnu.org/copyleft/gpl.html
