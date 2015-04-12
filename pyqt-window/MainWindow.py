@@ -5,12 +5,13 @@ from MainWindowUi import Ui_MainWindow
 from ChildDialogUi import Ui_ChildDialog
 from DialogUi import Ui_Dialog
 
-name        = "iSarchon"
-author      = "Pierpaolo Rasicci"
-version     = "1.0"
-link        = ""
-email       = ""
-licence     = "GPL"
+isarchon_info = {
+    "name": "iSarchon",
+    "author": "Pierpaolo Rasicci",
+    "version": (0, 0, 1),
+    "python": (3, 4),
+    "description": "Converter",
+    "licence": "GPL" }
 
 class MainWindow(QtGui.QMainWindow):
     def __init__(self):
@@ -37,6 +38,7 @@ class MainWindow(QtGui.QMainWindow):
         #self.dialog = Ui_Dialog(self)
 
     def convertPascalPressure(self, text):
+        '''The measure to insert'''
 
         if len(text) == 0:
             self.ui.lineEdit_Newton.clear()
@@ -93,20 +95,29 @@ class MainWindow(QtGui.QMainWindow):
             self.ui.lineEdit_Gram.setText(str(kg_per_smm))
             self.ui.lineEdit_Pound.setText(str(pound_per_sf))
 
-        if index_Pascal == 1 and index_NewtonSquareMeter == 0: # Pa - N/smm
+        if index_Pascal == 1 and index_NewtonSquareMeter == 0:
             newton_per_smm = float(text)
             pascal = newton_per_smm * 1000000.
             self.ui.lineEdit.setText(str(pascal))
 
-        if index_Pascal == 0 and index_NewtonSquareMeter == 1: # MPa - kN/smm
+        if index_Pascal == 0 and index_NewtonSquareMeter == 1:
             knewton_per_smm = float(text)
             mpascal = knewton_per_smm / 1000.
             self.ui.lineEdit.setText(str(mpascal))
 
-        if index_Pascal == 1 and index_NewtonSquareMeter == 1: # Pa - kN/sm
+        if index_Pascal == 1 and index_NewtonSquareMeter == 1:
             knewton_per_sm = float(text)
             pascal = knewton_per_sm * 1000.
             self.ui.lineEdit.setText(str(pascal))
+
+        if index_Pascal == 0 and index_NewtonSquareMeter == 1 and index_GramSquareMeter == 0 and index_PoundSquareFoot == 0:
+            knewton_per_sm = float(text)
+            mpascal = knewton_per_sm / 1000
+            kg_per_smm = knewton_per_sm / 9.8 / 1000
+            pound_per_sf = knewton_per_sm * 20890 / 1000
+            self.ui.lineEdit.setText(str(mpascal))
+            self.ui.lineEdit_Gram.setText(str(kg_per_smm))
+            self.ui.lineEdit_Pound.setText(str(pound_per_sf))
 
     def convertKgSquareMeterPressure(self, text):
 
